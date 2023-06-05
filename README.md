@@ -53,8 +53,6 @@ Ecom is an e-commerce marketplace offering a range of products from different br
 
 ![adw](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/c78614a7-55b1-4b00-b504-e62987ccd9ba)
 
-![ad2](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/992c67b7-879b-44a5-9bef-afdd534b392f)
-
 ![ad2w](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/4fe23bb5-334b-4553-88e5-e9e1e83eb63e)
 
 ![adwee](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3a36be13-1051-4bd9-8057-047cd07634fe)
