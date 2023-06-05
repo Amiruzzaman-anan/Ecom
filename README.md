@@ -43,18 +43,20 @@ Ecom is an e-commerce marketplace offering a range of products from different br
 
 **Admin:**
 
-![adse](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/e9a6aaee-3c62-4036-909b-475806971f70)
+![adse](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/58503790-e3ba-400e-b3bb-19391ace01f3)
 
-![adwqe](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3556e197-9753-4406-a093-e86d91c5038b)
+![adwqe](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/a4a33417-81ce-44a0-a6eb-4497c27899f9)
 
-![adweer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3039ac6d-908e-41b2-9c08-3ddb0309eb7c)
+![adweer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/2df9f00d-1aa3-4876-a723-4f94bd3d2e69)
+
+
 
 **User:**
 
-![adw](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/c78614a7-55b1-4b00-b504-e62987ccd9ba)
+![adw](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/2fbcad35-09ef-4acd-a0bb-7d27f43ecaef)
 
-![ad2w](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/4fe23bb5-334b-4553-88e5-e9e1e83eb63e)
+![ad2w](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/e3f76fb9-944c-4cf1-b8cd-6d6da245784b)
 
-![adwee](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3a36be13-1051-4bd9-8057-047cd07634fe)
+![adwee](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/1db4fc08-0787-4f5d-92f6-37a5acf408f3)
 
-![adwer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/55cceaa0-d26f-4685-a87b-69236c17892e)
+![adwer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/cb3b7036-665a-466a-a569-15d6582b3f5f)
