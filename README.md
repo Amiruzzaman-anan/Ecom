@@ -1,10 +1,12 @@
-Admin:
-![adwqe](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3556e197-9753-4406-a093-e86d91c5038b)
+[Screenshots:](url)
+**Admin:**
 ![adse](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/e9a6aaee-3c62-4036-909b-475806971f70)
+
+![adwqe](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3556e197-9753-4406-a093-e86d91c5038b)
+
 ![adweer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/3039ac6d-908e-41b2-9c08-3ddb0309eb7c)
 
-
-User:
+**User:**
 ![adw](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/c78614a7-55b1-4b00-b504-e62987ccd9ba)
 
 ![ad2](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/992c67b7-879b-44a5-9bef-afdd534b392f)
