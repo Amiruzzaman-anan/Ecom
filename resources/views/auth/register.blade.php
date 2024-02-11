@@ -28,14 +28,14 @@
 
             <!-- Phone -->
             <div class="mt-4">
-                <x-label for="phone" :value="__('Phone')" />
+                <x-label for="phone" :value="__('phone')" />
 
                 <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required />
             </div>
 
             <!-- Address -->
             <div class="mt-4">
-                <x-label for="address" :value="__('Address')" />
+                <x-label for="address" :value="__('address')" />
 
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
             </div>

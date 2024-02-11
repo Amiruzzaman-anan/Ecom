@@ -5,12 +5,12 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <h5>Showroom</h5>
+                        <h5>Ecom</h5>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> Banani,Dhaka</p>
-                        <p><strong>TELEPHONE:</strong> 0155484545556</p>
-                        <p><strong>EMAIL:</strong> amiruzzaman@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> Mohakhali,Dhaka</p>
+                        <p><strong>TELEPHONE:</strong> 06656545665</p>
+                        <p><strong>EMAIL:</strong> admin@gmail.com</p>
                       </div>
                    </div>
                </div>

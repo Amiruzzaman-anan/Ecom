@@ -65,6 +65,18 @@ padding: 10px;
   
         <h2 class="title_deg">All Orders</h2>
 
+
+        <div style="padding-left: 400px; padding-bottom: 30px;">
+<form action="{{url('search')}}" method="get">
+@csrf
+
+<input class="text_color" type="text" name="search" placeholder="Search for Order">
+<input type="submit" value="search" class="btn btn-outline-primary">
+</form>
+
+
+        </div>
+
         <table class="table_deg">
         <tr>
         <th class="th_deg">Name</th>
@@ -81,7 +93,7 @@ padding: 10px;
         <th class="th_deg">Print PDF</th>
     </tr>
 
-    @foreach($order as $order)
+    @forelse($order as $order)
     <tr>
     <td>{{$order->name}}</td>
     <td>{{$order->email}}</td>
@@ -89,7 +101,7 @@ padding: 10px;
     <td>{{$order->phone}}</td>
     <td>{{$order->product_title}}</td>
     <td>{{$order->quantity}}</td>
-    <td>{{$order->price}}</td>
+    <td>৳ {{$order->price}}</td>
     <td>{{$order->payment_status}}</td>
     <td>{{$order->delivery_status}}</td>
     <td><img src="product/{{$order->image}}" height="100" width="180" ></td>
@@ -108,8 +120,13 @@ padding: 10px;
     
     </tr>
 
+    @empty
+<tr>
+<td colspan="16">No Data Found</td>
 
-    @endforeach
+</tr>
+
+    @endforelse
         </table>
 
 </div>

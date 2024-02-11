@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 10:07 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Aug 22, 2022 at 05:59 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `brands` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `brand_name` varchar(255) NOT NULL,
+  `brand_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -39,11 +39,10 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `brand_name`, `created_at`, `updated_at`) VALUES
-(1, 'Square', '2023-03-14 11:32:39', '2023-03-14 11:32:39'),
-(2, 'Beximco', '2023-03-14 11:42:54', '2023-03-14 11:42:54'),
-(4, 'Acme', '2023-04-17 04:21:04', '2023-04-17 04:21:04'),
-(5, 'Fruit and Vegetable', '2023-06-05 00:28:17', '2023-06-05 00:28:17'),
-(6, 'Pran', '2023-06-05 00:32:21', '2023-06-05 00:32:21');
+(1, 'BMW', '2022-08-18 15:35:06', '2022-08-18 15:35:06'),
+(2, 'Lamborgini', '2022-08-18 15:35:10', '2022-08-18 15:35:10'),
+(3, 'Rolls Royce', '2022-08-22 07:44:19', '2022-08-22 07:44:19'),
+(4, 'Mercedes', '2022-08-22 07:44:24', '2022-08-22 07:44:24');
 
 -- --------------------------------------------------------
 
@@ -53,16 +52,16 @@ INSERT INTO `brands` (`id`, `brand_name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `carts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `product_title` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
-  `quantity` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `product_id` varchar(255) DEFAULT NULL,
-  `user_id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quantity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -75,9 +74,9 @@ CREATE TABLE `carts` (
 
 CREATE TABLE `comments` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `comment` longtext DEFAULT NULL,
-  `user_id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -87,9 +86,12 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `name`, `comment`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'test@gmail.com', 'Hello', '2', '2023-04-02 10:11:22', '2023-04-02 10:11:22'),
-(3, 'test@gmail.com', 'nice', '2', '2023-04-17 04:20:22', '2023-04-17 04:20:22'),
-(4, 'test@gmail.com', 'Great Products', '2', '2023-06-05 00:48:08', '2023-06-05 00:48:08');
+(1, 'Admin', 'Good products', '1', '2022-08-22 03:28:31', '2022-08-22 03:28:31'),
+(2, 'Amiruzzaman Anan', 'New Comment', '2', '2022-08-22 06:45:31', '2022-08-22 06:45:31'),
+(3, 'Amiruzzaman Anan', 'Good Products', '2', '2022-08-22 06:45:47', '2022-08-22 06:45:47'),
+(4, 'Amiruzzaman Anan', 'Liked All of them', '2', '2022-08-22 06:47:55', '2022-08-22 06:47:55'),
+(5, 'Amiruzzaman Anan', 'New Comment', '2', '2022-08-22 07:20:00', '2022-08-22 07:20:00'),
+(6, 'Ab Harris', 'Best Service.', '5', '2022-08-22 09:54:42', '2022-08-22 09:54:42');
 
 -- --------------------------------------------------------
 
@@ -99,11 +101,11 @@ INSERT INTO `comments` (`id`, `name`, `comment`, `user_id`, `created_at`, `updat
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -115,7 +117,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -124,18 +126,18 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
-(4, '2019_08_19_000000_create_failed_jobs_table', 1),
-(5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(6, '2022_08_17_053123_create_sessions_table', 1),
-(7, '2022_08_17_145432_create_brands_table', 1),
-(8, '2022_08_17_232549_create_products_table', 1),
-(9, '2022_08_18_141752_create_carts_table', 1),
-(10, '2022_08_18_161039_create_orders_table', 1),
-(11, '2022_08_22_090902_create_comments_table', 1),
-(12, '2022_08_22_090940_create_replies_table', 1);
+(16, '2014_10_12_000000_create_users_table', 1),
+(17, '2014_10_12_100000_create_password_resets_table', 1),
+(18, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
+(19, '2019_08_19_000000_create_failed_jobs_table', 1),
+(20, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(21, '2022_08_17_053123_create_sessions_table', 1),
+(22, '2022_08_17_145432_create_brands_table', 1),
+(23, '2022_08_17_232549_create_products_table', 1),
+(24, '2022_08_18_141752_create_carts_table', 1),
+(25, '2022_08_18_161039_create_orders_table', 1),
+(29, '2022_08_22_090902_create_comments_table', 2),
+(30, '2022_08_22_090940_create_replies_table', 2);
 
 -- --------------------------------------------------------
 
@@ -145,18 +147,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `user_id` varchar(255) DEFAULT NULL,
-  `product_title` varchar(255) DEFAULT NULL,
-  `quantity` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `product_id` varchar(255) DEFAULT NULL,
-  `payment_status` varchar(255) DEFAULT NULL,
-  `delivery_status` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quantity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `delivery_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -166,12 +168,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `address`, `user_id`, `product_title`, `quantity`, `price`, `image`, `product_id`, `payment_status`, `delivery_status`, `created_at`, `updated_at`) VALUES
-(9, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'Mango Himshagor', '3', '600', '1685946569.jpg', '9', 'Paid', 'delivered', '2023-06-05 00:42:58', '2023-06-05 00:49:30'),
-(10, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'PRAN Lacchi', '3', '75', '1685947047.jpg', '11', 'cash on delivery', 'processing', '2023-06-05 00:42:58', '2023-06-05 00:42:58'),
-(11, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'Bisk Club Potata Spicy Flavoured Biscuit', '4', '140', '1685947120.PNG', '13', 'cash on delivery', 'Order Cancelled', '2023-06-05 00:42:59', '2023-06-05 00:43:10'),
-(12, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'Pran Frooto Mango Fruit Drink', '3', '90', '1685947181.jpg', '14', 'cash on delivery', 'processing', '2023-06-05 00:42:59', '2023-06-05 00:42:59'),
-(13, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'Emorivir', '3', '900', '1678815824.jpg', '5', 'cash on delivery', 'processing', '2023-06-05 00:49:16', '2023-06-05 00:49:16'),
-(14, 'test@gmail.com', 'test@gmail.com', '1560', 'Mohakhali', '2', 'Camlodin', '3', '300', '1678815610.jpg', '4', 'cash on delivery', 'processing', '2023-06-05 00:49:16', '2023-06-05 00:49:16');
+(4, 'Amiruzzaman Anan', 'amirzaman24@gmail.com', '0548456465', 'Mohakhali', '2', 'Lamborghini Aventador', '2', '120000', '1660858650.jpg', '2', 'Paid', 'delivered', '2022-08-22 08:50:03', '2022-08-22 08:50:14'),
+(5, 'Amiruzzaman Anan', 'amirzaman24@gmail.com', '0548456465', 'Mohakhali', '2', 'Snister', '2', '181000', '1661175911.jpg', '3', 'cash on delivery', 'processing', '2022-08-22 08:50:03', '2022-08-22 08:50:03'),
+(6, 'Marc T Harris', 'majedifti@gmail.com', '378943897894', 'Dhaka', '3', 'BMW Series 3', '1', '45000', '1660858587.jpg', '1', 'cash on delivery', 'processing', '2022-08-22 09:43:45', '2022-08-22 09:43:45');
 
 -- --------------------------------------------------------
 
@@ -180,8 +179,8 @@ INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `address`, `user_id`, `pro
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -193,11 +192,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -211,13 +210,13 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `brand` varchar(255) DEFAULT NULL,
-  `quantity` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
-  `discount_price` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brand` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quantity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount_price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -227,14 +226,19 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `image`, `brand`, `quantity`, `price`, `discount_price`, `created_at`, `updated_at`) VALUES
-(4, 'Camlodin', 'Excellent', '1678815610.jpg', 'Square', '84', '100', NULL, '2023-03-14 11:40:10', '2023-04-02 10:13:28'),
-(5, 'Emorivir', 'Emorivir', '1678815824.jpg', 'Beximco', '44', '475', '300', '2023-03-14 11:43:44', '2023-03-14 11:43:44'),
-(9, 'Mango Himshagor', 'An immensely popular mango from Rajshahi which is considered to be the most superior of all mango in Bangladesh.. The inside color of this mango is yellow and orange. Does not have any fiber and very much tasty to eat. Medium size.', '1685946569.jpg', 'Fresh Vegetable', '40', '200', NULL, '2023-06-05 00:29:29', '2023-06-05 00:29:29'),
-(10, 'Red Tomato', 'Every 500 gm of the product will contain 7-10 pcs of Tomato.  The tomato is consumed in diverse ways, including raw, as an ingredient in many dishes, sauces, salads, and drinks.', '1685946706.jpg', 'Fruit and Vegetable', '700', '45', '35', '2023-06-05 00:31:46', '2023-06-05 00:31:46'),
-(11, 'PRAN Lacchi', 'Pran Lassi 285ml (Yogurt) Item code: 3000000013 Net Weight: 285ml Brand: PBL', '1685947047.jpg', 'Pran', '500', '25', NULL, '2023-06-05 00:37:27', '2023-06-05 00:37:27'),
-(12, 'PRAN Litchi', 'PRAN Litchi Drink 150ml Product code: 3000000006 Item code: 31017 Flavored Drinks Net weight: 150ml', '1685947093.jpg', 'Pran', '1000', '10', NULL, '2023-06-05 00:38:13', '2023-06-05 00:38:13'),
-(13, 'Bisk Club Potata Spicy Flavoured Biscuit', 'Bisk Club Potata Spicy Flavoured Biscuit 100 gm Item code: 5500001041 Brand: Bisk Club Net weight: 100gm', '1685947120.PNG', 'Pran', '200', '40', '35', '2023-06-05 00:38:40', '2023-06-05 00:38:40'),
-(14, 'Pran Frooto Mango Fruit Drink', 'Frooto mango fruit drink is the top most favorite healthy fruit drinks to the consumer of Bangladesh. It contains vitamin A, C and mineral which helps to remain fit throughout the day.', '1685947181.jpg', 'Pran', '500', '30', NULL, '2023-06-05 00:39:41', '2023-06-05 00:39:41');
+(1, 'BMW Series 3', 'Fast Car', '1660858587.jpg', 'BMW', '10', '50000', '45000', '2022-08-18 15:36:28', '2022-08-18 15:36:28'),
+(2, 'Lamborghini Aventador', 'Speedy', '1660858650.jpg', 'Lamborgini', '56', '60000', NULL, '2022-08-18 15:37:30', '2022-08-18 15:37:30'),
+(3, 'Snister', 'Speed Hunter', '1661175911.jpg', 'Rolls Royce', '10', '90500', NULL, '2022-08-22 07:45:11', '2022-08-22 07:45:11'),
+(4, 'Mercedes Benz', 'Black Diamond', '1661175952.jpg', 'Mercedes', '5', '89410', NULL, '2022-08-22 07:45:52', '2022-08-22 07:45:52'),
+(5, 'BMW X1', 'BMW X1 has come to set standards.', '1661181800.jpg', 'BMW', '65', '950000', '850000', '2022-08-22 09:23:20', '2022-08-22 09:23:20'),
+(6, 'BMW 2', 'The first-ever BMW 2 Series Gran Coupé introduces a new form of authority with a bold character to the compact class.', '1661182003.jpg', 'BMW', '8', '987451', '894126', '2022-08-22 09:26:43', '2022-08-22 09:26:43'),
+(7, 'BMW X5', 'EXCELLENT TRACTION WITH xOFFROAD', '1661182585.jpg', 'BMW', '5', '844156', '834156', '2022-08-22 09:35:55', '2022-08-22 09:36:25'),
+(8, 'Phantom', 'Class', '1661182757.webp', 'Rolls Royce', '7', '844126', NULL, '2022-08-22 09:39:17', '2022-08-22 09:39:17'),
+(9, 'Ghost', 'Like a Ghost', '1661182815.webp', 'Rolls Royce', '4', '784110', NULL, '2022-08-22 09:40:15', '2022-08-22 09:40:15'),
+(10, 'Dawn', 'Dawn', '1661182843.webp', 'Rolls Royce', '7', '7841326', '7541326', '2022-08-22 09:40:43', '2022-08-22 09:40:43'),
+(11, 'Wraith', 'Wraith', '1661183072.webp', 'Rolls Royce', '98', '987815', NULL, '2022-08-22 09:44:32', '2022-08-22 09:44:32'),
+(12, 'Black Badge', 'Black Badge', '1661183102.webp', 'Rolls Royce', '2', '988946', '968946', '2022-08-22 09:45:02', '2022-08-22 09:45:02'),
+(13, 'Spectre', 'Spectre', '1661183143.webp', 'Rolls Royce', '3', '451647', '441647', '2022-08-22 09:45:43', '2022-08-22 09:45:43');
 
 -- --------------------------------------------------------
 
@@ -244,10 +248,10 @@ INSERT INTO `products` (`id`, `title`, `description`, `image`, `brand`, `quantit
 
 CREATE TABLE `replies` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `comment_id` varchar(255) DEFAULT NULL,
-  `reply` longtext DEFAULT NULL,
-  `user_id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reply` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -257,9 +261,12 @@ CREATE TABLE `replies` (
 --
 
 INSERT INTO `replies` (`id`, `name`, `comment_id`, `reply`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'test@gmail.com', '1', 'xyz', '2', '2023-04-17 02:44:57', '2023-04-17 02:44:57'),
-(2, 'admin', '1', 'Good Job', '1', '2023-06-05 00:15:19', '2023-06-05 00:15:19'),
-(3, 'admin', '4', 'Thank You', '1', '2023-06-05 01:23:10', '2023-06-05 01:23:10');
+(1, 'Amiruzzaman Anan', '2', 'Thank You', '2', '2022-08-22 07:07:28', '2022-08-22 07:07:28'),
+(2, 'Amiruzzaman Anan', '4', 'Yeee', '2', '2022-08-22 07:07:42', '2022-08-22 07:07:42'),
+(3, 'Amiruzzaman Anan', '3', 'Loved It', '2', '2022-08-22 07:14:52', '2022-08-22 07:14:52'),
+(4, 'Amiruzzaman Anan', '3', 'Oka', '2', '2022-08-22 07:15:05', '2022-08-22 07:15:05'),
+(5, 'Amiruzzaman Anan', '2', 'Welcome', '2', '2022-08-22 07:16:07', '2022-08-22 07:16:07'),
+(6, 'Amiruzzaman Anan', '4', 'Good', '2', '2022-08-22 07:18:23', '2022-08-22 07:18:23');
 
 -- --------------------------------------------------------
 
@@ -268,11 +275,11 @@ INSERT INTO `replies` (`id`, `name`, `comment_id`, `reply`, `user_id`, `created_
 --
 
 CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` text NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_activity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -281,8 +288,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('acLKCoDjERGYDdOZLNIQwTOuEwUumorNjMUR1LoF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUkFUN1VTTjd6YTVUREREMjVvd0xjM1RaNkh5aml4NmpzdWRwcFBQeSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0X2RldGFpbHMvMTEiO319', 1685947982),
-('qxlXgsAlbTt8u25zQZyWOGb6B4hPvqe8ZBUzRZD3', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidWRFNHM3ZWJLNHozS0xuenp4Rkw0NURtSW9mNTVxUUM2cTBWcmFQUiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zaG93X29yZGVyIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1685949927);
+('NLyP1s1bH5oTpfCWxb8Vz17nlxxk5jST2J4dhIgV', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiQ1k4WmZVUjdiT3JLNVFvVTFHSk5VaXRuM3lxNEc0dHd6UmZ3N2ljciI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC92aWV3X2JyYW5kIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1661183813),
+('P55gQXXczIr506m9gjdVGSsNAltYL1BU3ts5xU0H', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYjlhRHdMakM5VHFjbWFiTktNWnNQelNzQW9CTTdSc3YwSDRhejNPNSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjU7fQ==', 1661183923),
+('yNV4yaiigqRtgsi7ndfqV7Bh7U8fBr7a91ksQmbw', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVG9SNFdKb3hNcFhjVHU2T0NaS0g2MDIxM2NMbExBOEdzS0NxdFhsQiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZWRpcmVjdCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjQ7fQ==', 1661179721);
 
 -- --------------------------------------------------------
 
@@ -292,19 +300,19 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `usertype` varchar(255) NOT NULL DEFAULT '0',
-  `phone` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `usertype` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `two_factor_secret` text DEFAULT NULL,
-  `two_factor_recovery_codes` text DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `two_factor_secret` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `profile_photo_path` varchar(2048) DEFAULT NULL,
+  `profile_photo_path` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -314,8 +322,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `usertype`, `phone`, `address`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '1', '1560', 'Mohakhali', NULL, '$2y$10$AwokaPF7Kp93ht4ZkHtfK.nP1AQDvAT7lNQVTWDiyglLq4FE943fe', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-14 11:26:04', '2023-03-14 11:26:04'),
-(2, 'test@gmail.com', 'test@gmail.com', '0', '1560', 'Mohakhali', NULL, '$2y$10$A2gt6HDRxk2Xl0wCO5oMpOJi0dSggcS15HQEG4fEb9v7YV7sRfLPG', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-14 11:27:40', '2023-03-14 11:27:40');
+(1, 'Admin', 'admin@gmail.com', '1', '01898754564', 'Badda', NULL, '$2y$10$REQmOTkPlN/dG1KDdH8f4uFE1Cqskd5OJRBIVYORXgru6DOzTK.aS', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-18 15:27:24', '2022-08-18 15:27:24'),
+(2, 'Amiruzzaman Anan', 'amirzaman24@gmail.com', '0', '0548456465', 'Mohakhali', NULL, '$2y$10$ao0c8.lZVSLhyHDJZ3gH8O/MsRtnP/RwGpI2PBAbBIseRBLO4fm0i', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-18 15:40:55', '2022-08-18 15:40:55'),
+(3, 'Marc T Harris', 'majedifti@gmail.com', '0', '378943897894', 'Dhaka', NULL, '$2y$10$bOIrScpdfe0r2QrkcTjhyOouzr5MmM4QDRTCc0iOIOjPyO26nX2EW', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-22 08:15:38', '2022-08-22 08:15:38'),
+(5, 'Ab Harris', 'harris@gmail.com', '0', NULL, NULL, NULL, '$2y$10$Er2/hyMAH0b6YyqH/MJYlOw027UYJCiwh2p2WY.DTs4JH4W9G5nIC', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-22 09:52:02', '2022-08-22 09:52:02');
 
 --
 -- Indexes for dumped tables
@@ -407,19 +417,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -431,13 +441,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -449,19 +459,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

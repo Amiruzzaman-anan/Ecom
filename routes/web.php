@@ -38,6 +38,7 @@ route::post('/update_product_confirm/{id}',[AdminController::class,'update_produ
 route::get('/order',[AdminController::class,'order']);
 route::get('/delivered/{id}',[AdminController::class,'delivered']);
 route::get('/print_pdf/{id}',[AdminController::class,'print_pdf']);
+route::get('/search',[AdminController::class,'searchdata']);
 
 
 route::get('/product_details/{id}',[HomeController::class,'product_details']);
@@ -49,7 +50,7 @@ route::get('/show_order',[HomeController::class,'show_order']);
 route::post('/add_comment',[HomeController::class,'add_comment']);
 route::post('/add_reply',[HomeController::class,'add_reply']);
 route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
-route::get('/product_search/{id}',[HomeController::class,'product_search']);
+route::get('/product_search',[HomeController::class,'product_search']);
 
 
 

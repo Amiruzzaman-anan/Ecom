@@ -131,5 +131,12 @@ public function print_pdf($id)
    return $pdf->download('order_details.pdf');
 }
 
+public function searchdata(Request $request)
+{
+   $searchText = $request->search;
+   $order=order::where('name','LIKE',"%$searchText")->orWhere('phone','LIKE',"%$searchText")->orWhere('product_title','LIKE',"%$searchText")->get();
+   return view('admin.order',compact('order'));
+}
+
 
 }

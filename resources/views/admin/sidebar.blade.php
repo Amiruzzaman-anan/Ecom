@@ -2,7 +2,7 @@
 
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="{{ url('/redirect') }}"><h2 class="red-text" style="color: White;">Showroom</h2></a>
+          <a class="sidebar-brand brand-logo" href="{{ url('/redirect') }}"><h2 class="red-text" style="color: White;">Ecom</h2></a>
           <a class="sidebar-brand brand-logo-mini" href="{{ url('/redirect') }}"><h2 class="red-text" style="color: White;">S</h2></a>
         </div>
         <ul class="nav">

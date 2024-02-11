@@ -1,62 +1,64 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-# Ecom: A Feature-rich eCommerce Site
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Ecom is an e-commerce marketplace offering a range of products from different brands. It features easy navigation, inventory management, and home delivery. Customers can pay and receive their purchases at their doorstep. They can inquire about products. Ecom aims to provide a plug-and-play shopping experience, making online shopping convenient and efficient.
+## About Laravel
 
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Features
-### Front-End
-- Responsive Layout
-- Shopping Cart
-- Discounts
-- Product attributes: cost price, promotion price, stock, brands...
-- Order attributes: Order status, sear ...
-- A Product search form
-- Order Tracking system
-- Multi-level Feedback system
-- Generate Invoice
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-#### Admin
-- Manage Brands (Add/Delete)
-- Manage Products (Add/Edit/Delete)
-- View Orders
-- Search for a particular order
-- Can update delivery status (If the delivery is marked done, customer cannot cancel order) 
-- Download Invoice
-- Can provide feedbacks
-- Can answer to customer feedbacks
+## Learning Laravel
 
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-#### User
-- Search by product name/brand
-- Add to Cart
-- View or Delete item from the cart
-- Send message and inquire
-- Give feedbacks
-- View and reply feedbacks
-- Download Invoice
-- View Delivery status
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-## Screenshots
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-**Admin:**
+### Premium Partners
 
-![adse](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/58503790-e3ba-400e-b3bb-19391ace01f3)
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-![adwqe](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/a4a33417-81ce-44a0-a6eb-4497c27899f9)
+## Contributing
 
-![adweer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/2df9f00d-1aa3-4876-a723-4f94bd3d2e69)
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
+## Code of Conduct
 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-**User:**
+## Security Vulnerabilities
 
-![adw](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/2fbcad35-09ef-4acd-a0bb-7d27f43ecaef)
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-![ad2w](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/e3f76fb9-944c-4cf1-b8cd-6d6da245784b)
+## License
 
-![adwee](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/1db4fc08-0787-4f5d-92f6-37a5acf408f3)
-
-![adwer](https://github.com/Amiruzzaman-anan/Ecom/assets/68743925/cb3b7036-665a-466a-a569-15d6582b3f5f)
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

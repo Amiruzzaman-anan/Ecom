@@ -23,8 +23,8 @@
 }
 
 .img_size{
-width: 150px;
-height: 200px;
+width: 350px;
+height: 100px;
 
 }
 

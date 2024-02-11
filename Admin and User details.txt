@@ -1,0 +1,16 @@
+Admin:
+
+Email: admin@email.com
+password: admin1234
+
+
+user: 
+
+amirzaman24@gmail.com
+password: test1234
+
+
+
+
+majedifti@gmail.com
+password: test1234
