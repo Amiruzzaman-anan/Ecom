@@ -6,6 +6,14 @@ Welcome to Ecom Laravel, an e-commerce marketplace that offers a diverse range o
 
 Visit the live demo of Ecom Laravel: [https://ecom.amiruzzaman.xyz/](https://ecom.amiruzzaman.xyz/)
 
+### Admin Login:
+- **Email:** admin@email.com
+- **Password:** admin123
+
+### User Login:
+- **Email:** amirzaman24@gmail.com
+- **Password:** test1234
+
 ## Requirements and Features
 
 ### Requirement 1: Admin Inventory Management
