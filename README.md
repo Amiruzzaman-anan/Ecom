@@ -98,14 +98,4 @@ Visit the live demo of Ecom Laravel: [https://ecom.amiruzzaman.xyz/](https://eco
 
 Visit [http://localhost:8000](http://localhost:8000) to access the application.
 
-## Contributing
 
-If you'd like to contribute to Ecom Laravel, please follow our [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to reach out for any questions or issues. Happy shopping with Ecom Laravel!
